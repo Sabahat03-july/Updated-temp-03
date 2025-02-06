@@ -3,9 +3,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const Card = ({ arr, size }: { arr: Product[], size?: "sm" | "lg" }) => {
+    console.warn(arr)
     return (
         <>{
             arr.map((data, index) => {
+                
                 return (
                     <Link key={index} href={`/products/all/${data.id}`}>
                         <div key={index} className={`${size !== "lg" ? 'sm:w-80 xs:w-52 w-36' : 'sm:w-96 w-40'} z-0`}>
